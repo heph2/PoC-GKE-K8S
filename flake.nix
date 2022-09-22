@@ -10,7 +10,7 @@
     in {
       devShell = pkgs.mkShell {
         nativeBuildInputs = [ pkgs.bashInteractive ];
-        buildInputs = [ ];
+        buildInputs = with pkgs; [ terraform google-cloud-sdk ];
       };
       defaultPackage = terranix.lib.terranixConfiguration {
 	inherit system;
