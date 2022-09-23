@@ -77,3 +77,18 @@ module "gke" {
     ]
   }
 }
+
+resource "google_project_service" "artifactregistry_googleapis_com" {
+  project = var.project_id
+  service = "artifactregistry.googleapis.com"
+}
+
+# Docker Artifact Hub
+resource "google_artifact_registry_repository" "docker-repo" {
+  location      = "europe-west8"
+  project       = var.project_id
+  repository_id = "docker-repo"
+  format        = "DOCKER"
+  depends_on = [google_project_service.artifactregistry_googleapis_com]
+}
+
