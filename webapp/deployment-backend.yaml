@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  labels:
+    app: backend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: webapp
+      tier: backend
+      track: stable
+  template:
+    metadata:
+      labels:
+        app: webapp
+        tier: backend
+        track: stable
+    spec:
+      containers:
+      - name: webapp
+        image: europe-west8-docker.pkg.dev/acquired-voice-363315/hello-repo/webapp-sample-backend:v1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000

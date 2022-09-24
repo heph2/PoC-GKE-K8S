@@ -17,6 +17,7 @@
         buildInputs = with pkgs; [
           terraform
           google-cloud-sdk
+          kubernetes-helm
           nur-pkgs.repos.heph2.google-cloud-sdk-auth-plugin
         ];
       };
