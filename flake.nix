@@ -18,6 +18,7 @@
           terraform
           google-cloud-sdk
           kubernetes-helm
+          kustomize
           nur-pkgs.repos.heph2.google-cloud-sdk-auth-plugin
         ];
       };

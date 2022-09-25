@@ -18,7 +18,8 @@ spec:
     spec:
       containers:
         - name: webapp-frontend
-          image: europe-west8-docker.pkg.dev/acquired-voice-363315/hello-repo/webapp-sample-frontend:v1
+          # image: europe-west8-docker.pkg.dev/acquired-voice-363315/hello-repo/webapp-sample-frontend:latest
+          image: webapp-frontend
           imagePullPolicy: Always
           ports:
             - containerPort: 3000

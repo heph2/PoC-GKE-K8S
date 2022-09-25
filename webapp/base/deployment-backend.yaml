@@ -19,8 +19,9 @@ spec:
         track: stable
     spec:
       containers:
-      - name: webapp
-        image: europe-west8-docker.pkg.dev/acquired-voice-363315/hello-repo/webapp-sample-backend:v1
+      - name: webapp-backend
+#        image: europe-west8-docker.pkg.dev/acquired-voice-363315/hello-repo/webapp-sample-backend:latest
+        image: webapp-backend
         imagePullPolicy: Always
         ports:
         - containerPort: 3000
