@@ -1,0 +1,18 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namePrefix: dev-
+commonLabels:
+  variant: dev
+namespace: dev
+bases:
+- ../../base
+images:
+  - name: webapp-backend
+    newName: europe-west8-docker.pkg.dev/acquired-voice-363315/hello-repo/webapp-sample-backend-dev
+    newTag: 9dd988fa55bad4bcf2e54b6876185b6643570a7b
+  - name: webapp-frontend
+    newName: europe-west8-docker.pkg.dev/acquired-voice-363315/hello-repo/webapp-sample-frontend-dev
+    newTag: f25509bea32fefbebfd6bee3269ed0ce1d10c07d
+
+patchesStrategicMerge:
+- ingress.yaml

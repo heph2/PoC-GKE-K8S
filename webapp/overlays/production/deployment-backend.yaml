@@ -2,7 +2,3 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: backend
-images:
-  - image: backend
-    newImage: europe-west8-docker.pkg.dev/acquired-voice-363315/hello-repo/webapp-sample-backend
-    newTag: v1

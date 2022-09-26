@@ -6,3 +6,5 @@ terraform.tfstate.backup
 terraform-gke-keyfile.json
 roles.sh
 config.tf.json
+webapp/app-backend.yaml
+webapp/oath.yaml

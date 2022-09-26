@@ -1,0 +1,18 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namePrefix: staging-
+commonLabels:
+  variant: staging
+namespace: staging
+bases:
+- ../../base
+images:
+  - name: webapp-backend
+    newName: europe-west8-docker.pkg.dev/acquired-voice-363315/hello-repo/webapp-sample-backend-stage
+    newTag: ea77a44e1430c76c76f25176996fce1b4e3d1311
+  - name: webapp-frontend
+    newName: europe-west8-docker.pkg.dev/acquired-voice-363315/hello-repo/webapp-sample-frontend-stage
+    newTag: 88d472cd46e387b60f0139998a696fdbce50ed14 
+
+patchesStrategicMerge:
+- ingress.yaml
