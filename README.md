@@ -22,6 +22,18 @@ enough in a real-world scenario, where you should use something like
 even better, a private GKE Cluster specifically used for dev and stage
 testing.
 
+Using that approach each team can have access to a specific version of
+the application, and in the case of the QA team, they can easily tests
+new features just merged, without having them deployed on the stage or
+production tenants.
+
+`User Story-X`
+
+Development ---> Code Review ---> Functionl Review ---> Merging on Dev
+branch (or choose a better name for it) ---> Create Container and push
+to GAR ---> Pull Container and deploy it to dev tenants ---> Tests on
+specific tenant with authentication
+
 ## How it Works
 
 In this repository there are both terraform code for create and manage
